@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICLE - Progress Tracker</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body{
+  background:linear-gradient(135deg,#0a0014 0%,#1a0033 50%,#0a0014 100%);
+  color:#fff;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:20px;
+  line-height:1.8;
+}
+.box{
+  max-width:900px;
+  margin:20px auto;
+  background:rgba(30,30,30,0.7);
+  border:2px solid #00aaff;
+  border-radius:15px;
+  padding:25px;
+  box-shadow:0 0 20px rgba(0,170,255,0.2);
+}
+h1{
+  color:#00aaff;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:32px;
+  text-shadow:0 0 10px #00aaff;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin:25px 0;
+}
+.stat-card{
+  background:#000;
+  border:2px solid #00aaff;
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-card h3{
+  font-size:35px;
+  color:#00ff88;
+  margin-bottom:5px;
+}
+.stat-card p{
+  color:#aaa;
+  font-size:14px;
+}
+.progress-bar{
+  background:#111;
+  border:2px solid #00aaff;
+  border-radius:20px;
+  height:30px;
+  margin:15px 0;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg, #00ff88, #00aaff);
+  width:0%;
+  transition:width 1s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  color:#000;
+}
+.topic-list{
+  margin-top:25px;
+}
+.topic{
+  background:#000;
+  border-left:4px solid #00aaff;
+  padding:15px;
+  margin:12px 0;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.topic.completed{
+  border-left-color:#00ff88;
+  background:rgba(0,255,136,0.05);
+}
+.status{
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+.status.done{
+  background:#00ff88;
+  color:#000;
+}
+.status.pending{
+  background:#ffaa00;
+  color:#000;
+}
+.img-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin:20px 0;
+}
+.img-grid img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid #00aaff;
+}
+a{
+  color:#00aaff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+}
+@media(max-width:700px){
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .img-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+<a href="index.html">← BACK TO HOME</a>
+<div class="box">
+  <h1>📊 PROGRESS TRACKER</h1>
+
+  <div class="img-grid">
+    <div><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400"></div>
+    <div><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400"></div>
+    <div><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400"></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <h3 id="totalScore">0</h3>
+      <p>Total Points</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="topicsDone">0/10</h3>
+      <p>Topics Completed</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="challengeScore">0/10</h3>
+      <p>Challenge Score</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="assessmentDone">No</h3>
+      <p>Final Assessment</p>
+    </div>
+  </div>
+
+  <h3 style="color:#00aaff;margin-top:20px;">Overall Progress</h3>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill">0%</div>
+  </div>
+
+  <div class="topic-list">
+    <h3 style="color:#00aaff;margin-bottom:15px;">Learning Topics Progress</h3>
+    <div id="topicProgress"></div>
+  </div>
+
+</div>
+<script>
+// Load data from parent/localStorage
+let score = 0;
+let topicsCompleted = 0;
+let challengeCompleted = false;
+let assessmentCompleted = false;
+
+function loadProgress(){
+  // Get score from parent
+  if(parent && parent.score) score = parent.score;
+  
+  // Check localStorage for completed topics
+  topicsCompleted = parseInt(localStorage.getItem('topicsCompleted') || '0');
+  challengeCompleted = localStorage.getItem('challengeDone') === 'true';
+  assessmentCompleted = localStorage.getItem('assessmentDone') === 'true';// Update stats
+  document.getElementById('totalScore').innerText = score;
+  document.getElementById('topicsDone').innerText = topicsCompleted + '/10';
+  document.getElementById('challengeScore').innerText = challengeCompleted ? '10/10' : '0/10';
+  document.getElementById('assessmentDone').innerText = assessmentCompleted ? 'Yes' : 'No';
+  
+  // Calculate progress %
+  let progress = (topicsCompleted / 10) * 100;
+  if(challengeCompleted) progress += 10;
+  if(assessmentCompleted) progress += 20;
+  progress = Math.min(progress, 100);
+  
+  document.getElementById('progressFill').style.width = progress + '%';
+  document.getElementById('progressFill').innerText = Math.round(progress) + '%';
+  
+  // Load topics
+  let topics = [
+    "Basic Concepts of Computer",
+    "Types of Computers",
+    "Hardware and Software",
+    "Input and Output Devices",
+    "Computer Memory",
+    "Operating System",
+    "Computer Programming",
+    "Data Representation",
+    "Internet and Web",
+    "Computer Ethics and Safety"
+  ];
+  
+  let html = '';
+  topics.forEach((t,i)=>{
+    let done = i < topicsCompleted;
+    html += `<div class="topic ${done ? 'completed' : ''}">
+      <span>Topic ${i+1}: ${t}</span>
+      <span class="status ${done ? 'done' : 'pending'}">${done ? 'COMPLETED' : 'PENDING'}</span>
+    </div>`;
+  });
+  document.getElementById('topicProgress').innerHTML = html;
+}
+
+loadProgress();
+</script>
+</body>
+</html>

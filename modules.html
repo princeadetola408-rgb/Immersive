@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICLE - Programming Modules</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body{
+  background:linear-gradient(135deg,#0a0014 0%,#1a0033 50%,#0a0014 100%);
+  color:#fff;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:20px;
+  line-height:1.7;
+}
+.box{
+  max-width:1100px;
+  margin:20px auto;
+  background:rgba(30,30,30,0.7);
+  border:2px solid #a855f7;
+  border-radius:15px;
+  padding:25px;
+  box-shadow:0 0 20px rgba(168,85,247,0.2);
+}
+h1{
+  color:#a855f7;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:32px;
+  text-shadow:0 0 10px #a855f7;
+} 
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+.card{
+  background:#000;
+  border:2px solid #a855f7;
+  border-radius:10px;
+  padding:20px;
+}
+.card h3{
+  color:#a855f7;
+  font-size:22px;
+  margin-bottom:10px;
+}
+.img-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:15px 0;
+}
+.img-grid img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid #a855f7;
+}
+.img-caption{
+  text-align:center;
+  font-size:11px;
+  color:#aaa;
+}
+.card ul{
+  margin:10px 0 15px 20px;
+}
+.card li{
+  margin:5px 0;
+}
+.keypoint{
+  background:rgba(168,85,247,0.1);
+  border-left:4px solid #a855f7;
+  padding:10px;
+  margin:10px 0;
+  border-radius:5px;
+  font-size:14px;
+}
+.video-container{
+  margin:15px 0;
+}
+iframe{
+  width:100%;
+  height:200px;
+  border:none;
+  border-radius:10px;
+}
+a{
+  color:#a855f7;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+} 
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr;}
+  .img-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+  .img-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<a href="index.html">← BACK TO HOME</a>
+<div class="box">
+  <h1>&lt;/&gt; PROGRAMMING MODULES</h1>
+  <div class="grid">
+    
+    <div class="card">
+      <h3>1. Python</h3>
+      <div class="img-grid">
+        <div><img src="https://placehold.co/200x120/3776ab/ffffff/png?text=Python"><div class="img-caption">Python Logo</div></div>
+        <div><img src="https://placehold.co/200x120/3776ab/ffffff/png?text=Code"><div class="img-caption">Python Code</div></div>
+        <div><img src="https://placehold.co/200x120/3776ab/ffffff/png?text=Output"><div class="img-caption">Run Output</div></div>
+      </div>
+      <ul>
+        <li><b>Variables & Data Types:</b> int, float, string, boolean</li>
+        <li><b>Loops:</b> for loop, while loop</li>
+        <li><b>Conditions:</b> if, elif, else</li>
+        <li><b>Functions:</b> def function_name():</li>
+        <li><b>Lists & Dictionaries:</b> Store multiple data</li>
+      </ul>
+      <div class="keypoint"><b>KEY:</b> Python is easy to learn. Used for AI, Web, Data</div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/HFZFjoXPP8Q" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="card">
+      <h3>2. C++</h3>
+      <div class="img-grid">
+        <div><img src="https://placehold.co/200x120/00599c/ffffff/png?text=C++"><div class="img-caption">C++ Logo</div></div>
+        <div><img src="https://placehold.co/200x120/00599c/ffffff/png?text=Code"><div class="img-caption">C++ Code</div></div>
+        <div><img src="https://placehold.co/200x120/00599c/ffffff/png?text=Compile"><div class="img-caption">Compile</div></div>
+      </div>
+      <ul>
+        <li><b>Syntax:</b> #include &lt;iostream&gt;</li>
+        <li><b>Data Types:</b> int, float, char, double</li>
+        <li><b>Arrays:</b> Store multiple values</li>
+        <li><b>Pointers:</b> Memory address</li>
+        <li><b>OOP:</b> Classes and Objects</li>
+      </ul>
+      <div class="keypoint"><b>KEY:</b> C++ is fast. Used for Games, OS, Banking</div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/ZzaPdXTrSb8" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="card">
+      <h3>3. HTML & CSS</h3><div class="img-grid">
+        <div><img src="https://placehold.co/200x120/e34c26/ffffff/png?text=HTML"><div class="img-caption">HTML</div></div>
+        <div><img src="https://placehold.co/200x120/1572b6/ffffff/png?text=CSS"><div class="img-caption">CSS</div></div>
+        <div><img src="https://placehold.co/200x120/e34c26/ffffff/png?text=Website"><div class="img-caption">Website</div></div>
+      </div>
+      <ul>
+        <li><b>HTML Tags:</b> &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;, &lt;a&gt;</li>
+        <li><b>Forms:</b> input, button, textarea</li>
+        <li><b>Tables:</b> table, tr, td</li>
+        <li><b>CSS:</b> color, font-size, margin, padding</li>
+        <li><b>Layout:</b> Flexbox, Grid</li>
+      </ul>
+      <div class="keypoint"><b>KEY:</b> HTML = Structure. CSS = Styling</div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/UB1O30fR-EE" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="card">
+      <h3>4. JavaScript</h3>
+      <div class="img-grid">
+        <div><img src="https://placehold.co/200x120/f7df1e/000000/png?text=JS"><div class="img-caption">JavaScript</div></div>
+        <div><img src="https://placehold.co/200x120/f7df1e/000000/png?text=DOM"><div class="img-caption">DOM</div></div>
+        <div><img src="https://placehold.co/200x120/f7df1e/000/png?text=Event"><div class="img-caption">Events</div></div>
+      </div>
+      <ul>
+        <li><b>Variables:</b> let, const, var</li>
+        <li><b>DOM:</b> document.getElementById()</li>
+        <li><b>Events:</b> onclick, onload</li>
+        <li><b>Functions:</b> function myFunc(){}</li>
+        <li><b>Arrays & Objects:</b> Store data</li>
+      </ul>
+      <div class="keypoint"><b>KEY:</b> JavaScript makes websites interactive</div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/W6NZfCO5SIk" allowfullscreen></iframe></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

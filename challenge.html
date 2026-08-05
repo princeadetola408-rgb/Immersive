@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICLE - Practice Challenge</title>
+<style>
+body{background:linear-gradient(135deg,#0a0014 0%,#1a0033 50%,#0a0014 100%);color:#fff;font-family:'Segoe UI';padding:20px;}
+.box{max-width:850px;margin:20px auto;background:rgba(30,30,30,0.7);border:2px solid #ffaa00;border-radius:15px;padding:25px;}
+h1{color:#ffaa00;text-align:center;margin-bottom:10px;font-size:32px;}
+.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:20px 0;}
+.img-grid img{width:100%;height:150px;object-fit:cover;border-radius:8px;border:2px solid #ffaa00;}
+.q{margin:20px 0;padding:20px;background:#000;border-radius:10px;border-left:4px solid #ffaa00;}
+.q p{font-size:17px;margin-bottom:12px;}
+.btn{padding:10px 20px;background:#333;border:2px solid #ffaa00;border-radius:8px;color:#fff;cursor:pointer;margin:5px;font-weight:bold;font-size:15px;transition:0.2s;}
+.btn:hover{background:#ffaa00;color:#000;}
+.score-box{text-align:center;font-size:22px;margin-top:20px;padding:15px;background:#000;border-radius:10px;border:2px solid #ffaa00;}
+a{color:#ffaa00;text-decoration:none;font-weight:bold;font-size:16px;}
+</style>
+</head>
+<body>
+<a href="index.html">← BACK TO HOME</a>
+<div class="box">
+  <h1>🏆 PRACTICE CHALLENGE - 10 QUESTIONS</h1>
+  <div class="img-grid">
+    <div><img src="https://images.unsplash.com/photo-1555617981-082d0ccf6e47?w=400"><div class="img-caption">CPU</div></div>
+    <div><img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400"><div class="img-caption">Keyboard</div></div>
+    <div><img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400"><div class="img-caption">Memory</div></div>
+  </div>
+  <div id="quiz"></div>
+  <div class="score-box">Score: <span id="score">0</span>/10 | Points Earned: <span id="points">0</span></div>
+</div>
+<script>
+const questions = [
+  {q:"1. What does CPU stand for?", a:["Central Processing Unit","Computer Personal Unit","Central Power Unit"], correct:0},
+  {q:"2. Which is an input device?", a:["Monitor","Keyboard","Printer"], correct:1},
+  {q:"3. 1 Byte =? Bits", a:["4","8","16"], correct:1},
+  {q:"4. Which is system software?", a:["MS Word","Windows","Chrome"], correct:1},
+  {q:"5. RAM stands for?", a:["Read Access Memory","Random Access Memory","Run Access Memory"], correct:1},
+  {q:"6. Which is not a programming language?", a:["Python","C++","Excel"], correct:2},
+  {q:"7. WWW stands for?", a:["World Wide Web","World Web Wide","Web World Wide"], correct:0},
+  {q:"8. 1024 KB =? MB", a:["1","10","100"], correct:0},
+  {q:"9. Which device is both input and output?", a:["Keyboard","Monitor","Touchscreen"], correct:2},
+  {q:"10. Illegal copying of software is called?", a:["Hacking","Piracy","Virus"], correct:1}
+];
+let score=0, points=0;
+function loadQuiz(){
+  let html="";
+  questions.forEach((ques,i)=>{
+    html+=`<div class="q"><p><b>${ques.q}</b></p>`;
+    ques.a.forEach((opt,j)=>{
+      html+=`<button class="btn" onclick="check(this,${j===ques.correct},${i})">${opt}</button>`;
+    });
+    html+="</div>";
+  });
+  document.getElementById('quiz').innerHTML=html;
+}
+function check(btn,correct,i){
+  let buttons = btn.parentElement.querySelectorAll('.btn');
+  buttons.forEach(b => b.disabled = true);
+  if(correct){
+    btn.style.background='#00ff88'; btn.style.color='#000';
+    score++; points+=10; parent.addScore(10);
+  } else {
+    btn.style.background='red';
+    buttons[questions[i].correct].style.background='#00ff88'; buttons[questions[i].correct].style.color='#000';
+  }
+  document.getElementById('score').innerText=score;
+  document.getElementById('points').innerText=points;
+}
+loadQuiz();
+</script>
+</body>
+</html>

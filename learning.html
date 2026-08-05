@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICLE - Learning Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+body{background:linear-gradient(135deg,#0a0014 0%,#1a0033 50%,#0a0014 100%);color:#fff;font-family:'Segoe UI';padding:20px;}
+.back{color:#00ffff;text-decoration:none;font-family:'Orbitron';font-weight:bold;}
+h1{text-align:center;color:#00ffff;text-shadow:0 0 10px #00ffff;font-family:'Orbitron';}
+details{background:rgba(0,0,0,0.6);border:2px solid #333;border-radius:10px;margin:15px 0;padding:15px;}
+summary{font-size:18px;font-weight:bold;color:#00ffff;cursor:pointer;font-family:'Orbitron';}
+.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0;}
+.img-grid img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:2px solid #00ffff;}
+.img-caption{text-align:center;font-size:12px;color:#aaa;}
+iframe{width:100%;height:350px;border:none;border-radius:10px;margin:15px 0;}
+.theory{background:rgba(0,255,255,0.1);padding:15px;border-radius:10px;border-left:3px solid #00ffff;}
+.theory h3{color:#00ffff;margin-bottom:10px;}
+.theory li{margin:5px 0;}
+.complete-btn{width:100%;padding:14px;margin-top:15px;background:#00ff88;border:none;border-radius:8px;color:#000;font-weight:bold;font-size:16px;cursor:pointer;font-family:'Orbitron';transition:0.3s;}
+.complete-btn:hover{box-shadow:0 0 15px #00ff88;transform:scale(1.02);}
+@media(max-width:900px){.img-grid{grid-template-columns:repeat(2,1fr);} iframe{height:250px;}}
+@media(max-width:500px){.img-grid{grid-template-columns:1fr;} iframe{height:200px;}}
+</style></head><body>
+
+<a href="index.html" class="back">⬅ BACK TO HOME</a>
+<h1>📚 COMPUTER SCIENCE - COMPLETE WAEC NOTES</h1>
+
+<details open>
+<summary>Topic 1: Basic Concepts of Computer</summary>
+<div class="img-grid">
+  <div><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400"><div class="img-caption">Desktop Computer</div></div>
+  <div><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400"><div class="img-caption">Laptop Computer</div></div>
+  <div><img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400"><div class="img-caption">Tablet Computer</div></div>
+</div>
+<iframe src="https://www.youtube.com/embed/GQo2bIu-0L8" title="What is a Computer" allowfullscreen></iframe>
+<div class="theory">
+  <h3>1.1 DEFINITION OF COMPUTER</h3>
+  A computer is an electronic device that accepts raw data as input, processes it according to instructions, and produces meaningful information as output.<br><br>
+  <h3>1.2 CHARACTERISTICS</h3>
+  <li>Speed: Can perform millions of calculations per second</li>
+  <li>Accuracy: Gives correct results if input is correct - GIGO</li>
+  <li>Storage: Can store large amount of data</li>
+  <li>Versatility: Can do many different types of work</li>
+  <li>Diligence: Never gets tired</li>
+  <h3>KEY POINT</h3> The 5 components: Hardware, Software, Peopleware, Data, Procedure. Remember: HSPDP
+</div>
+<button onclick="completeTopic(1)" class="complete-btn">✅ MARK TOPIC 1 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 2: Types of Computers</summary>
+<div class="img-grid">
+  <div><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400"><div class="img-caption">Micro Computer</div></div>
+  <div><img src="https://images.unsplash.com/photo-1558494949-ef5c8edcc1c1?w=400"><div class="img-caption">Mainframe Computer</div></div>
+  <div><img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400"><div class="img-caption">Super Computer</div></div>
+</div>
+<iframe src="https://www.youtube.com/embed/7Hq9lJp5iQc" title="Types of Computers" allowfullscreen></iframe>
+<div class="theory">
+  <h3>2.1 BY SIZE & CAPACITY</h3>
+  <li>Micro: For personal use. E.g PC, Laptop, Smartphone</li>
+  <li>Mini: For small company/department</li>
+  <li>Mainframe: For big company/bank. Handles many users</li><li>Super: For weather, space, science. Very fast</li>
+</div>
+<button onclick="completeTopic(2)" class="complete-btn">✅ MARK TOPIC 2 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 3: Hardware and Software</summary>
+<div class="img-grid">
+  <div><img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400"><div class="img-caption">Hardware</div></div>
+  <div><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400"><div class="img-caption">Software</div></div>
+</div>
+<iframe src="https://www.youtube.com/embed/ExxFxI7kRuo" title="Hardware and Software" allowfullscreen></iframe>
+<div class="theory">
+  <h3>3.1 HARDWARE</h3> Physical parts you can touch. E.g Monitor, Keyboard, CPU, Mouse, Printer<br><br>
+  <h3>3.2 SOFTWARE</h3> Programs and Instructions. 
+  <li>System Software: Windows, Linux, Android</li>
+  <li>Application Software: MS Word, Chrome, Games</li>
+</div>
+<button onclick="completeTopic(3)" class="complete-btn">✅ MARK TOPIC 3 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 4: Input and Output Devices</summary>
+<iframe src="https://www.youtube.com/embed/Ee0R9g4cM4E" title="Input and Output Devices" allowfullscreen></iframe>
+<div class="theory">
+  <h3>4.1 INPUT DEVICES</h3> Used to enter data into computer. E.g Keyboard, Mouse, Scanner, Microphone, Webcam<br><br>
+  <h3>4.2 OUTPUT DEVICES</h3> Used to show result. E.g Monitor, Printer, Speaker, Projector
+</div>
+<button onclick="completeTopic(4)" class="complete-btn">✅ MARK TOPIC 4 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 5: Computer Memory</summary>
+<iframe src="https://www.youtube.com/embed/cV-7Jc9dM0E" title="Computer Memory RAM ROM" allowfullscreen></iframe>
+<div class="theory">
+  <h3>5.1 TYPES OF MEMORY</h3>
+  <li>RAM: Random Access Memory. Volatile. Temporary</li>
+  <li>ROM: Read Only Memory. Permanent. Has boot instructions</li>
+  <li>Cache: Very fast memory between CPU and RAM</li>
+  <li>Secondary: HDD, SSD, Pen Drive for long storage</li>
+</div>
+<button onclick="completeTopic(5)" class="complete-btn">✅ MARK TOPIC 5 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 6: Operating System</summary>
+<iframe src="https://www.youtube.com/embed/26QPDBe-NkY" title="What is Operating System" allowfullscreen></iframe>
+<div class="theory">
+  <h3>6.1 DEFINITION</h3> Software that manages computer hardware and provides interface between user and hardware.<br><br>
+  <h3>6.2 EXAMPLES</h3> Windows, Linux, MacOS, Android, iOS<br>
+  <h3>6.3 FUNCTIONS</h3> File management, Memory management, Security
+</div>
+<button onclick="completeTopic(6)" class="complete-btn">✅ MARK TOPIC 6 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 7: Computer Programming</summary>
+<iframe src="https://www.youtube.com/embed/zOjov-2OZ0E" title="What is Programming" allowfullscreen></iframe>
+<div class="theory">
+  <h3>7.1 DEFINITION</h3> Process of writing instructions for computer to follow to solve a problem.<br><br>
+  <h3>7.2 PROGRAMMING LANGUAGES</h3> Python, C++, Java, HTML, JavaScript<br>
+  <h3>7.3 STEPS</h3> Problem Analysis → Algorithm → Coding → Testing → Debugging
+</div>
+<button onclick="completeTopic(7)" class="complete-btn">✅ MARK TOPIC 7 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 8: Data Representation</summary>
+<iframe src="https://www.youtube.com/embed/TeKw9dg-zYk" title="Binary Decimal Hex" allowfullscreen></iframe>
+<div class="theory">
+  <h3>8.1 NUMBER SYSTEMS</h3>
+  <li>Binary: Base 2. Uses 0,1</li>
+  <li>Decimal: Base 10. Uses 0-9</li>
+  <li>Hexadecimal: Base 16. Uses 0-F</li>
+  <h3>8.2 DATA TYPES</h3> Text, Number, Image, Audio, Video
+</div>
+<button onclick="completeTopic(8)" class="complete-btn">✅ MARK TOPIC 8 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 9: Internet and Web</summary>
+<iframe src="https://www.youtube.com/embed/DxCCuzgRsVc" title="Internet and WWW" allowfullscreen></iframe>
+<div class="theory">
+  <h3>9.1 INTERNET</h3> Network of networks. Connects computers worldwide.<br><br>
+  <h3>9.2 WWW</h3> World Wide Web. Uses HTTP, URL, Browser to access websites.<br>
+  <h3>9.3 SERVICES</h3> Email, Chat, Social Media, Cloud Storage
+</div>
+<button onclick="completeTopic(9)" class="complete-btn">✅ MARK TOPIC 9 AS COMPLETE</button>
+</details>
+
+<details>
+<summary>Topic 10: Computer Ethics and Safety</summary>
+<iframe src="https://www.youtube.com/embed/inWWhr5tnEA" title="Computer Ethics" allowfullscreen></iframe>
+<div class="theory">
+  <h3>10.1 COMPUTER ETHICS</h3> 
+  <li>Don't hack or spread virus</li>
+  <li>Don't plagiarize. Respect copyright</li>
+  <li>Don't use computer to commit fraud</li><br>
+  <h3>10.2 COMPUTER SAFETY</h3> 
+  <li>Use antivirus</li>
+  <li>Backup data regularly</li>
+  <li>Use strong password</li>
+</div>
+<button onclick="completeTopic(10)" class="complete-btn">✅ MARK TOPIC 10 AS COMPLETE</button>
+</details>
+
+
+<script>
+function completeTopic(num){
+  localStorage.setItem('topic'+num, 'completed');
+  alert('Topic '+num+' Marked as COMPLETED! ✅');
+  location='progress.html'; // auto go to progress page
+}
+</script>
+</body></html>
