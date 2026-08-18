@@ -2,247 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICLE - Final Assessment</title>
+<title>IICPE - Final Assessment</title>
 <style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body{
-  background:linear-gradient(135deg,#0a0014 0%,#1a0033 50%,#0a0014 100%);
-  color:#fff;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding:20px;
-  line-height:1.8;
-}
-.box{
-  max-width:900px;
-  margin:20px auto;
-  background:rgba(30,30,30,0.7);
-  border:2px solid #00ff88;
-  border-radius:15px;
-  padding:25px;
-  box-shadow:0 0 20px rgba(0,255,136,0.2);
-}
-h1{
-  color:#00ff88;
-  text-align:center;
-  margin-bottom:10px;
-  font-size:32px;
-  text-shadow:0 0 10px #00ff88;
-}
-.subtitle{
-  text-align:center;
-  color:#aaa;
-  margin-bottom:20px;
-  font-size:15px;
-}
-.img-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin:20px 0;
-}
-.img-grid img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:8px;
-  border:2px solid #00ff88;
-}
-.img-caption{
-  text-align:center;
-  font-size:13px;
-  color:#aaa;
-  margin-top:5px;
-}
-.section-title{
-  color:#00ffff;
-  font-size:22px;
-  margin:30px 0 15px 0;
-  border-bottom:2px solid #00ffff;
-  padding-bottom:5px;
-}
-.q{
-  margin:20px 0;
-  padding:20px;
-  background:#000;
-  border-radius:10px;
-  border-left:4px solid #00ff88;
-}
-.q p{
-  font-size:17px;
-  margin-bottom:12px;
-  font-weight:bold;
-}
-.q-theory{
-  font-size:15px;
-  color:#ccc;
-  margin-bottom:10px;
-  background:rgba(0,255,136,0.05);
-  padding:10px;
-  border-radius:5px;
-}
-input,textarea,select{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  background:#111;
-  color:#fff;
-  border:2px solid #00ff88;
-  border-radius:8px;
-  font-size:15px;
-  font-family:'Segoe UI';
-}
-textarea{
-  height:120px;
-  resize:vertical;
-}
-.btn{
-  padding:18px 30px;
-  background:#00ff88;
-  border:none;
-  border-radius:10px;
-  color:#000;
-  cursor:pointer;
-  font-weight:bold;
-  font-size:18px;
-  width:100%;
-  margin-top:25px;
-  transition:0.3s;
-}
-.btn:hover{
-  box-shadow:0 0 20px #00ff88;
-  transform:scale(1.02);
-}
-#result{
-  text-align:center;
-  font-size:20px;
-  margin-top:20px;
-  padding:20px;
-  background:#000;
-  border-radius:10px;
-  border:2px solid #00ff88;
-  color:#00ff88;
-  display:none;
-}
-a{
-  color:#00ff88;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:16px;
-}
-@media(max-width:700px){
-  .img-grid{grid-template-columns:repeat(2,1fr);}
-}
+:root {--bg:#000814; --border:#00e5ff; --text:#00e5ff; --accent:#00ff88;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Consolas',monospace}
+body{background:var(--bg);color:var(--text);padding:20px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:rgba(0,0,0,0.5);border-bottom:2px solid var(--border)}
+.back-home{color:var(--accent);text-decoration:none;font-weight:700}
+.header{text-align:center;margin:30px 0}
+.header h1{font-size:2.2em;text-shadow:0 0 15px var(--text)}
+.assessment{background:rgba(0,229,255,0.08);border:2px solid var(--border);border-radius:15px;padding:25px;margin-bottom:20px}
+.assessment p{font-size:18px;margin-bottom:10px;line-height:1.6}
+textarea{width:100%;height:120px;background:#000;color:var(--accent);border:2px solid var(--border);border-radius:10px;padding:15px;font-size:16px}
+.btn-submit{display:block;width:300px;margin:30px auto;padding:15px;background:var(--accent);color:var(--bg);border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:18px}
 </style>
 </head>
 <body>
-<a href="index.html">← BACK TO HOME</a>
-<div class="box">
-  <h1>📋 FINAL ASSESSMENT</h1>
-  <p class="subtitle">Complete all 10 questions. You need 70% to pass. +100 Points</p>
-
-  <div class="img-grid">
-    <div><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400"><div class="img-caption">Taking Exam</div></div>
-    <div><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400"><div class="img-caption">Study Theory</div></div>
-    <div><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400"><div class="img-caption">Get Certificate</div></div>
-  </div>
-
-  <form onsubmit="submitTest(event)">
-    
-    <h3 class="section-title">SECTION A: THEORY - 5 QUESTIONS</h3>
-
-    <div class="q">
-      <p>1. a. Define a Computer  b. State 4 characteristics of a computer</p>
-      <div class="q-theory">Hint: Think Speed, Accuracy, Storage, Diligence</div>
-      <textarea placeholder="a. A computer is an electronic device... b. 1. Speed 2. Accuracy 3. Storage 4. Diligence" required></textarea>
-    </div>
-
-    <div class="q">
-      <p>2. a. Differentiate between RAM and ROM  b. State 2 functions of Operating System</p>
-      <div class="q-theory">Hint: RAM = Volatile, ROM = Non-Volatile</div>
-      <textarea placeholder="a. RAM is temporary... ROM is permanent... b. 1. Memory Management 2. File Management" required></textarea>
-    </div>
-
-    <div class="q">
-      <p>3. a. What is an Algorithm?  b. List the 5 steps in Program Development Cycle</p>
-      <div class="q-theory">Hint: Steps start with Problem Analysis</div>
-      <textarea placeholder="a.Algorithm is step by step procedure... b. 1. Problem Analysis 2. Algorithm 3. Flowchart 4. Coding 5. Testing" required></textarea>
-    </div>
-
-    <div class="q">
-      <p>4. a. List 3 input devices and 3 output devices  b. What is computer piracy?</p>
-      <div class="q-theory">Hint: Input = Keyboard, Output = Monitor</div>
-      <textarea placeholder="a. Input: Keyboard, Mouse, Scanner. Output: Monitor, Printer, Speaker b. Illegal copying of software" required></textarea>
-    </div>
-
-    <div class="q">
-      <p>5. a. Convert 1011 in binary to decimal  b. State 3 computer ethics</p>
-      <div class="q-theory">Hint: 1011 = 8+2+1 = 11</div>
-      <textarea placeholder="a. 11 b. 1. No Hacking 2. No Plagiarism 3. Respect Privacy" required></textarea>
-    </div>
-
-    <h3 class="section-title">SECTION B: OBJECTIVES - 5 QUESTIONS</h3>
-
-    <div class="q">
-      <p>6. The brain of the computer is the?</p>
-      <select required>
-        <option value="">-- Select Answer --</option>
-        <option>A) RAM</option>
-        <option>B) CPU</option>
-        <option>C) Monitor</option>
-        <option>D) Keyboard</option>
-      </select>
-    </div>
-
-    <div class="q">
-      <p>7. Which of these is a system software?</p>
-      <select required>
-        <option value="">-- Select Answer --</option>
-        <option>A) MS Word</option>
-        <option>B) Chrome</option>
-        <option>C) Windows 11</option>
-        <option>D) Photoshop</option>
-      </select>
-    </div>
-
-    <div class="q">
-      <p>8. 1024 Megabytes is equal to?</p>
-      <select required>
-        <option value="">-- Select Answer --</option>
-        <option>A) 1 KB</option>
-        <option>B) 1 GB</option>
-        <option>C) 1 TB</option>
-        <option>D) 1 MB</option>
-      </select>
-    </div>
-
-    <div class="q">
-      <p>9. HTML stands for?</p>
-      <input type="text" placeholder="HyperText Markup Language" required>
-    </div>
-
-    <div class="q">
-      <p>10. Which device is used to input sound into a computer?</p>
-      <select required>
-        <option value="">-- Select Answer --</option>
-        <option>A) Speaker</option>
-        <option>B) Microphone</option>
-        <option>C) Scanner</option>
-        <option>D) Printer</option>
-      </select>
-    </div>
-
-    <button class="btn" type="submit">SUBMIT ASSESSMENT +100 POINTS</button>
-  </form>
-  <div id="result"></div>
+<div class="topbar">
+  <a href="index.html" class="back-home">← BACK TO HOME</a>
+  <div>IICPE v4.5 - FINAL ASSESSMENT</div>
 </div>
-<script>
-function submitTest(e){
-  e.preventDefault();
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('result').innerHTML = "✅ ASSESSMENT SUBMITTED SUCCESSFULLY!<br><br>+100 Points Added to Your Score<br>Result will be reviewed by instructor<br><br>Great Job! Keep Learning 💪";
-  parent.addScore(100);
-}
-</script>
+
+<div class="header">
+  <h1>📝 FINAL ASSESSMENT</h1>
+  <p>Answer all questions. This covers Week 1 - Week 4</p>
+</div>
+
+<div class="assessment">
+  <p>1. Explain the difference between Hardware and Software with 2 examples each</p>
+  <textarea placeholder="Type your answer here..."></textarea>
+</div>
+<div class="assessment">
+  <p>2. Write a Python program to print numbers from 1 to 5 using a for loop</p>
+  <textarea placeholder="Type your code here..."></textarea>
+</div>
+<div class="assessment">
+  <p>3. List and explain 3 characteristics of a computer</p>
+  <textarea placeholder="Type your answer here..."></textarea>
+</div>
+<div class="assessment">
+  <p>4. What are the 3 types of programming languages based on level? Give 1 example each</p>
+  <textarea placeholder="Type your answer here..."></textarea>
+</div>
+<div class="assessment">
+  <p>5. What is the difference between Frontend and Backend in Web Development?</p>
+  <textarea placeholder="Type your answer here..."></textarea>
+</div>
+
+<button class="btn-submit" onclick="alert('Assessment Submitted Successfully!')">SUBMIT ASSESSMENT</button>
 </body>
 </html>
